@@ -2,4 +2,6 @@
   width: 300px;
   background: rgba(43, 43, 43, 0.169);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }

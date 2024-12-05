@@ -1,21 +1,14 @@
-import List from "./components/List";
-import bg from "../src/assets/bg.avif";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Chat from "./components/Chat";
-import Detail from "./components/Detail";
-import Userinfo from "./components/List/Userinfo";
-import ChatList from "./components/List/ChatList";
+import LiveChat from "./pages/LiveChat";
 
 function App() {
   return (
-    <div className="container" style={{ backgroundImage: `${bg}` }}>
-      <List>
-        <Userinfo name={"salah"} lastName={"bangMo"} />
-        <ChatList />
-      </List>
-      <Chat />
-      <Detail />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LiveChat />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
