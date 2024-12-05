@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  border-right: 1px solid rgba(219, 217, 217, 0.746);
+  position: relative;
+}
+
+.section {
+  width: 400px;
+
+  display: flex;
+  justify-content: space-between;
+  align-self: start;
+  padding: 0px 10px 5px 10px;
+  border-bottom: 1px solid rgba(219, 217, 217, 0.746);
+  border-bottom: 1px solid rgba(219, 217, 217, 0.746);
+}
+
+.profile-bar {
+  display: flex;
+  align-items: center;
+}
+
+.text-name {
+  text-align: start;
+  font-weight: bold;
+  color: #4e4765;
+}
+.text-profile {
+  font-weight: normal;
+  font-size: 12px;
+}
+.typing-box-container {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  transform: translateX(0);
+}
+
+.input {
+  flex: 1;
+  outline: none;
+  border: none;
+  background-color: rgba(40, 41, 43, 0.429);
+  padding: 10px 26px 10px 26px;
+  color: antiquewhite;
+  border-radius: 12px;
+}
