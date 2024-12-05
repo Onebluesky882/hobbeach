@@ -11,12 +11,13 @@ type UserInfoProps = {
 const UserInfo = ({ name, lastName }: UserInfoProps) => {
   return (
     <div className={css["container"]}>
-      <FaCircleUser size={20} style={{ marginRight: "14px" }} />
-      <p>
-        {name} <span style={{ marginLeft: "10px" }}></span>
-      </p>
-      <p>{lastName}</p>
-      <div>
+      <div className={css["detail-name"]}>
+        <FaCircleUser size={25} />
+        <p>{name}</p>
+        <p>{lastName}</p>
+      </div>
+
+      <div className={css["profile-icon"]}>
         <BsThreeDots />
         <PiVideoCameraFill />
         <FaEdit />

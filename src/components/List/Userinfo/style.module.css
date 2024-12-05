@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+
+  justify-content: space-between;
+}
+.detail-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+.profile-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  gap: 10px;
+}

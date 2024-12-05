@@ -1,5 +1,5 @@
 import "./style.css";
 const Detail = () => {
-  return <div>index</div>;
+  return <div>detail</div>;
 };
 export default Detail;
