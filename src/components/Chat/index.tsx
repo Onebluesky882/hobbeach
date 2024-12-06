@@ -1,15 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./style.module.css";
 import { LuMessageSquareHeart } from "react-icons/lu";
 import { MdLibraryBooks } from "react-icons/md";
 import { MdOutlineMail } from "react-icons/md";
+import EmojiPicker from "emoji-picker-react";
 const Chat = () => {
   const [emoji, setEmoji] = useState("");
   const [openEmoji, setOpenEmoji] = useState(false);
 
-  const handleEmojiClick = (emojiObject: any) => {
-    setEmoji((prev) => prev + emojiObject.emoji); // Append emoji to input text
+  const handleEmojiClick = (e: any) => {
+    setEmoji((prev) => prev + e.emoji); // Append emoji to input text
+    setOpenEmoji((prev) => !prev);
   };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmoji(e.target.value);
+  };
+
+  const hadleClickOutside = (event: MouseEvent) => {
+    const emojiPopup = document.getElementById("emoji-popup");
+    if (emojiPopup && !emojiPopup.contains(event.target as Node)) {
+      setOpenEmoji(false);
+    }
+  };
+
+  useEffect(() => {
+    if (openEmoji) {
+      document.addEventListener("click", hadleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("click", hadleClickOutside);
+    };
+  }, [openEmoji]);
+
   return (
     <div className={css["container"]}>
       <div className={css["section"]}>
@@ -49,10 +72,18 @@ const Chat = () => {
           <div className={css["column"]}>// icon</div>
           <div className={css["column"]}>
             {" "}
-            <input type="text" className={css["input"]} />
+            <input
+              type="text"
+              className={css["input"]}
+              value={emoji}
+              onChange={handleInputChange}
+            />
           </div>
           <div className={css["column"]}>
-            <p onClick={() => console.log("click")}>😊</p>
+            <div id="emoji-popup" onClick={() => setOpenEmoji((prev) => !prev)}>
+              😊
+            </div>
+            {openEmoji && <EmojiPicker onEmojiClick={handleEmojiClick} />}
           </div>
         </div>
       </div>
