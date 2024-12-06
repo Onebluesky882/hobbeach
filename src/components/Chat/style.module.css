@@ -5,7 +5,6 @@
 }
 
 .section-profile {
-  width: 400px;
   display: flex;
   justify-content: space-between;
   align-self: start;
@@ -40,18 +39,16 @@
 /* bottom container */
 .typing-box-container {
   display: flex;
-  position: fixed;
-  bottom: 0px;
-  transform: translateX(0);
-
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  padding-top: 5px;
   .section-message-box {
-    width: 400px;
     display: flex;
-    justify-content: space-around;
+
     align-self: flex-end;
     padding: 0px 10px 5px 10px;
     align-items: center;
-    margin-bottom: 10px;
   }
   .column-left {
     display: flex;
@@ -79,5 +76,32 @@
     position: absolute;
     bottom: 50px;
     left: 0px;
+  }
+}
+
+/* middle */
+.center {
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
+  padding-left: 10px;
+
+  .message {
+    width: 80%;
+    display: flex;
+    gap: 15px;
+    background-color: #34363d41;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .message-own {
+    display: flex;
+    width: 80%;
+    align-self: flex-end;
+    background-color: #4f639a5d;
+    padding: 10px;
+    border-radius: 20px;
   }
 }
