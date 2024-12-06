@@ -7,7 +7,7 @@
 .section-profile {
   display: flex;
   justify-content: space-between;
-  align-self: start;
+  align-items: center;
   padding: 0px 10px 5px 10px;
   border-bottom: 1px solid rgba(219, 217, 217, 0.746);
   border-bottom: 1px solid rgba(219, 217, 217, 0.746);
@@ -101,5 +101,12 @@
     background-color: #4f639a5d;
     padding: 10px;
     border-radius: 20px;
+    margin-right: 10px;
   }
+  .texts {
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+  }
+  /* middle */
 }
