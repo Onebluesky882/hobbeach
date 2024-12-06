@@ -21,7 +21,7 @@ export const TopBar = () => {
             </div>
           </div>
         </div>
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
           <MdOutlineMail />
           <LuMessageSquareHeart />
           <MdLibraryBooks />

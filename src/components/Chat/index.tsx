@@ -1,6 +1,6 @@
 import css from "./style.module.css";
-import { ButtonSection } from "./ButtonSection";
-import { TopBar } from "./Topbar";
+
+import { TopBar } from "./TopBar";
 const Chat = () => {
   return (
     <Container>
