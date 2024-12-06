@@ -1,6 +1,13 @@
 import { FaUserCircle } from "react-icons/fa";
 import css from "./style.module.css";
+import { useEffect, useRef } from "react";
 export const ChatBody = () => {
+  const endRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  });
+
   return (
     <div style={{ display: "flex", overflow: "scroll" }}>
       <div className={css["center"]}>
@@ -105,7 +112,7 @@ export const ChatBody = () => {
             <span> 1 min ago</span>
           </div>
         </div>
-        {/*  */}
+        <div ref={endRef}> </div>
       </div>
     </div>
   );
