@@ -3,18 +3,22 @@ import css from "./style.module.css";
 import { LuMessageSquareHeart } from "react-icons/lu";
 import { MdLibraryBooks } from "react-icons/md";
 import { MdOutlineMail } from "react-icons/md";
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
+import { IoIosSend } from "react-icons/io";
+import { ImAttachment } from "react-icons/im";
+import { CiImageOn } from "react-icons/ci";
 const Chat = () => {
-  const [emoji, setEmoji] = useState("");
+  const [text, setText] = useState("");
   const [openEmoji, setOpenEmoji] = useState(false);
 
-  const handleEmojiClick = (e: any) => {
-    setEmoji((prev) => prev + e.emoji); // Append emoji to input text
+  const handleEmojiClick = (e: EmojiClickData) => {
+    setText((prev) => prev + e.emoji); // Append emoji to input text
     setOpenEmoji((prev) => !prev);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmoji(e.target.value);
+    e.preventDefault();
+    setText(e.target.value);
   };
 
   const hadleClickOutside = (event: MouseEvent) => {
@@ -35,7 +39,7 @@ const Chat = () => {
 
   return (
     <div className={css["container"]}>
-      <div className={css["section"]}>
+      <div className={css["section-profile"]}>
         <div className={css["profile-bar"]}>
           <img
             src="https://placehold.co/100"
@@ -43,19 +47,8 @@ const Chat = () => {
             width={65}
             style={{ padding: "10px", borderRadius: "50px" }}
           />{" "}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              lineHeight: "0px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
+          <div className={css["column-top-bar"]}>
+            <div className={css["text-name-box"]}>
               <p className={css["text-name"]}>John knownThen</p>
               <p className={css["text-profile"]}>Neque porro quisquam est,</p>
             </div>
@@ -67,23 +60,38 @@ const Chat = () => {
           <MdLibraryBooks />
         </div>
       </div>
+
+      {/* bottom  */}
       <div className={css["typing-box-container"]}>
-        <div className={css["section"]}>
-          <div className={css["column"]}>// icon</div>
-          <div className={css["column"]}>
+        <div className={css["section-message-box"]}>
+          <div className={css["column-left"]}>
+            <ImAttachment />
+            <CiImageOn />
+          </div>
+          <div className={css["column-message-box"]}>
             {" "}
             <input
               type="text"
               className={css["input"]}
-              value={emoji}
+              value={text}
               onChange={handleInputChange}
             />
           </div>
-          <div className={css["column"]}>
+          <div className={css["column-emoji"]}>
             <div id="emoji-popup" onClick={() => setOpenEmoji((prev) => !prev)}>
               😊
             </div>
-            {openEmoji && <EmojiPicker onEmojiClick={handleEmojiClick} />}
+            <div>
+              <IoIosSend />
+            </div>
+            <div className={css["emoji-popup"]}>
+              {openEmoji && (
+                <EmojiPicker
+                  onEmojiClick={handleEmojiClick}
+                  className="picker"
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
