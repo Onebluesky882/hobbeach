@@ -14,7 +14,6 @@ export const ButtonSection = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     setText(e.target.value);
   };
 

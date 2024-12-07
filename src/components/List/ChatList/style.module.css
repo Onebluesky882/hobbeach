@@ -32,6 +32,12 @@
   background-color: rgba(47, 47, 47, 0.415);
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 1s ease, transform 1s ease;
+
+  &.add-icon:hover {
+    background-color: rgb(17, 40, 184);
+  }
 }
 .item {
   display: flex;

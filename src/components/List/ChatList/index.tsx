@@ -1,12 +1,30 @@
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
 import css from "./style.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaMinus } from "react-icons/fa6";
+import AddUser from "./AddUser";
 
 export const ChatList = () => {
   const [icon, setIcon] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
+  const handleClickOutSide = (event: MouseEvent) => {
+    if (
+      containerRef.current &&
+      !containerRef.current.contains(event.target as Node)
+    ) {
+      setIcon(false);
+    }
+  };
+  console.log("icon", icon);
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutSide);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutSide);
+    };
+  }, []);
   return (
     <div className={css["search"]}>
       <div className={css["search-bar"]}>
@@ -18,11 +36,14 @@ export const ChatList = () => {
         />
       </div>
       {icon ? (
-        <FaMinus
-          size={18}
-          className={css["add-icon"]}
-          onClick={() => setIcon(false)}
-        />
+        <>
+          <AddUser />
+          <FaMinus
+            size={18}
+            className={css["add-icon"]}
+            onClick={() => setIcon(false)}
+          />
+        </>
       ) : (
         <FaPlus
           size={18}

@@ -1,0 +1,49 @@
+.box {
+  padding: 20px;
+  background-color: rgba(31, 23, 64, 0.93);
+  border-radius: 10px;
+  z-index: 100;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  /*  left: 500px; */
+
+  .form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .div-user-add {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+  }
+}
+.input-search {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  border-color: aliceblue;
+}
+.button-search {
+  color: white;
+  outline: none;
+  border: none;
+  background-color: rgb(18, 197, 185);
+  border-radius: 8px;
+  padding: 5px 8px 5px 8px;
+}
+.button-user {
+  color: white;
+  outline: none;
+  border: none;
+  background-color: rgb(18, 197, 185);
+  border-radius: 8px;
+  padding: 5px 8px 5px 8px;
+}
