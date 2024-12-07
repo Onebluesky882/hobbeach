@@ -17,7 +17,7 @@ export const ChatList = () => {
       setIcon(false);
     }
   };
-  console.log("icon", icon);
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutSide);
 
@@ -26,7 +26,7 @@ export const ChatList = () => {
     };
   }, []);
   return (
-    <div className={css["search"]}>
+    <div className={css["search"]} ref={containerRef}>
       <div className={css["search-bar"]}>
         <IoSearchCircleSharp size={25} />
         <input
