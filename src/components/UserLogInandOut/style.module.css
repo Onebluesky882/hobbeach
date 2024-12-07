@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  outline: 1px solid red;
   align-items: center;
 }
 
@@ -20,5 +19,24 @@
     flex: 1;
     color: antiquewhite;
     padding: 4px 8px 4px 8px;
+  }
+}
+.register-section {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lable-file {
+    outline: none;
+    border: none;
   }
 }
