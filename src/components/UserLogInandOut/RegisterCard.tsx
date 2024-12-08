@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import css from "./style.module.css";
 import { FaUserCircle } from "react-icons/fa";
+import { GlobalContext } from "../../hooks/GlobalContext";
 
 type RegisterCardProps = {
   name: string;
@@ -17,8 +18,9 @@ const defaultUser = {
 };
 
 export const RegisterCard = () => {
-  const [user, setUser] = useState<RegisterCardProps>(defaultUser);
-  // update later type later
+  const { setNewUser, newUser, createUser } =
+    useContext(GlobalContext).newUserProvider;
+
   const [avatar, setAvatar] = useState<{ file: File | null; url: string }>({
     file: null,
     url: "",
@@ -44,7 +46,8 @@ export const RegisterCard = () => {
       surname: formData.get("surname") as string,
       password: formData.get("password") as string,
     };
-    setUser(updateUser);
+    setNewUser(updateUser);
+    createUser();
   };
   return (
     <div className={css["register-section"]}>
