@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 const LoginCard = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("success");
   };
   return (
     <div className={css["section-login"]}>
