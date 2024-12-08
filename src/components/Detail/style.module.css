@@ -3,6 +3,11 @@
   flex-direction: column;
   width: 300px;
 }
+@media (max-width: 500px) {
+  .container {
+    display: none;
+  }
+}
 
 .detail-profile {
   display: flex;

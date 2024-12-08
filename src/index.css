@@ -1,9 +1,11 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --border-line-color: rgba(245, 222, 179, 0.543);
 }
 
 body {
-  background-image: url("../src/assets/bg.avif");
+  background-image: url("./assets/bg.avif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,3 +17,46 @@ body {
   align-items: center;
   user-select: none;
 }
+
+/* Default styles for mobile */
+body {
+  font-size: 14px;
+}
+
+/* Styles for tablets and larger screens */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Styles for desktops */
+@media (min-width: 1280px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
+
+h1 {
+  font-size: clamp(2rem, 1rem + 10vw, 5rem);
+}
+
+/* The mobile-first pre-defined media queries: */
+
+/* xs */ /* Mobile-friendly styles */
+/* @media (max-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

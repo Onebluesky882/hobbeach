@@ -1,7 +1,12 @@
 .container {
   display: flex;
-  border-right: 1px solid rgba(219, 217, 217, 0.746);
+  border-right: 1px solid var(--border-line-color);
   position: relative;
+}
+@media (max-width: 500px) {
+  .container {
+    border: none;
+  }
 }
 
 .section-profile {
@@ -9,8 +14,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 10px 5px 10px;
-  border-bottom: 1px solid rgba(219, 217, 217, 0.746);
-  border-bottom: 1px solid rgba(219, 217, 217, 0.746);
+  border-bottom: 1px solid var(--border-line-color);
 
   .profile-bar {
     display: flex;
